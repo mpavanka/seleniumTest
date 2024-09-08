@@ -1,5 +1,6 @@
 package example;
 
+import io.qameta.allure.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -44,6 +45,7 @@ public class SampleTest {
 
     @Test
     @Parameters("searchValue")
+    @Description("opening google and performing search in google")
     public void openGoogle(String searchValue) {
         this.searchValue = searchValue;
         // Open Google in the first tab
@@ -73,7 +75,9 @@ public class SampleTest {
 
 //    @Test(dependsOnMethods = "openGoogle")
     @Test(enabled = false)
-    public void openYahoo() {
+    @Parameters("searchValue")
+    public void openYahoo(String searchValue) {
+        this.searchValue = searchValue;
         // Get all open window handles (tabs)
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
 
