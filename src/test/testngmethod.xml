@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="ParallelSuite">
+    <test name="TestParallelExecution">
+        <classes>
+            <class name="example.SampleTest"/>
+            <parameter name="searchValue" value="Google CEO"/>
+        </classes>
+    </test>
+</suite>
