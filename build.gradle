@@ -18,12 +18,21 @@ dependencies {
     // TestNG and Allure
     testImplementation 'org.testng:testng:7.7.1'
     testImplementation 'io.qameta.allure:allure-testng:2.14.0'
+
+    // Cucumber Java
+    testImplementation 'io.cucumber:cucumber-java:7.10.0'
+
+    // Cucumber TestNG
+    testImplementation 'io.cucumber:cucumber-testng:7.10.0'
+
+
 }
 
 test {
-    useTestNG() {
-        suites 'src/test/testngmethod.xml'
-    }
+//    useTestNG() {
+//        suites 'src/test/testngmethod.xml'
+//    }
+    include '**/TestRunner.class'
 }
 
 allure {
