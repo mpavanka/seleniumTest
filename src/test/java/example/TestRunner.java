@@ -1,15 +1,14 @@
 package example;
 
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
 
-
+@RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/*.feature",
-        glue = "example.stepDefination",
-        tags = "@pavan",
-        dryRun = true,
-        plugin = {"pretty", "html:target/cucumber-reports.html", "json:target/cucumber-reports/Cucumber.json"}
+        features = "src/test/resources/features",
+        glue = {"stepDefinitions"},
+        plugin = {"pretty", "html:target/cucumber-report.html"}
 )
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class TestRunner {
 }
